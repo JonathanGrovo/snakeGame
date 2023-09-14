@@ -82,9 +82,12 @@ function update() {
     }
 
     // if ( snakeBody[0] !== null) {
-    //     snakeBody[0].style.left = snakeX * 20 + "px";
+    //     
     //     snakeBody[0].style.top = snakeY * 20 + "px";
     // }
+
+    // snakeBody[0].style.left = snakeX * 20 + "px";
+    console.log(snakeBody[0]);
 
 
     // for (let i = 0; i < snakeLength; i++) {
@@ -132,17 +135,17 @@ function generateFood() {
 function createSnakeSegment(x, y) {
     const segment = document.createElement("div");
     segment.classList.add("snake-segment");
-    segment.style.width = "20px";
+    segment.style.width = "300px";
     segment.style.height = "20px";
     segment.style.position = "absolute";
-    segment.style.left = x * 20 + "px";
-    segment.style.top = y * 20 + "px";
+    // segment.style.left = x * 20 + "px";
+    // segment.style.top = y * 20 + "px";
     return segment;
 }
 
-// let initialSegment = createSnakeSegment(snakeX, snakeY);
-// gameContainer.appendChild(initialSegment);
-// snakeBody.push(initialSegment);
+const initialSegment = createSnakeSegment(snakeX, snakeY);
+gameContainer.appendChild(initialSegment);
+snakeBody.push(initialSegment);
 
 // listens for when the user presses a key
 document.addEventListener("keydown", (event) => {
